@@ -29,8 +29,9 @@ data = [
     import exportExcel from 'your folder/export_excel.vue'
 
     const json_data = ref([]);
-     json_data.value = `your data`;
+    json_data.value = `your data`;
 </script>
+
 <template>
     <exportExcel :data="json_data" />
 </template>
