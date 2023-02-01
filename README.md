@@ -25,11 +25,14 @@ data = [
 
 ```sh
 <script setup>
-    import {ref} from 'vue'
+    import {ref, onBeforeMount} from 'vue'
     import exportExcel from 'your folder/export_excel.vue'
 
     const json_data = ref([]);
-    json_data.value = `your data`;
+    
+    onBeforeMount(() => {
+        json_data.value = `your data`;
+    })
 </script>
 
 <template>
