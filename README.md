@@ -7,7 +7,7 @@ npm install exceljs
 ```
 
 ## Data Format
-
+```sh
 data = [
                 {
                     colName11: val11,
@@ -20,7 +20,7 @@ data = [
                     colName23: val23,...
                 }
             ]
-
+```
 ## Use In VUE3
 
 ```sh
