@@ -1,20 +1,21 @@
 <script setup>
     import {ref, watchEffect} from "vue"
     import ExcelJs from 'exceljs'
+    import excel from './icons/Excel.vue'
 
     `
     npm install exceljs
     傳入的資料格式
     data = [
                 {
-                    colName11: val11,
-                    colName12: val12,
-                    colName13: val13,...
+                    colName1: val11,
+                    colName2: val12,
+                    colName3: val13,...
                 },
                 {
-                    colName21: val21,
-                    colName22: val22,
-                    colName23: val23,...
+                    colName1: val21,
+                    colName2: val22,
+                    colName3: val23,...
                 }
             ]
     `
@@ -23,6 +24,8 @@
     const data = ref([]);
     const columns = ref([]);
     watchEffect(() => {
+        data.value = [];
+        columns.value = [];
         if (PropDatas.data.length >0) {
             Object.keys(PropDatas.data[0]).forEach((col) => {
             columns.value.push({name: col});
@@ -62,5 +65,5 @@
 </script>
 
 <template>
-    <el-button type="primary" @click="download">Export Excel</el-button>
+    <el-button @click="download" text><excel/></el-button>
 </template>
