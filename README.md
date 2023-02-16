@@ -10,14 +10,14 @@ npm install exceljs
 ```sh
 data = [
                 {
-                    colName11: val11,
-                    colName12: val12,
-                    colName13: val13,...
+                    colName1: val11,
+                    colName2: val12,
+                    colName3: val13,...
                 },
                 {
-                    colName21: val21,
-                    colName22: val22,
-                    colName23: val23,...
+                    colName1: val21,
+                    colName2: val22,
+                    colName3: val23,...
                 }
             ]
 ```
@@ -25,11 +25,14 @@ data = [
 
 ```sh
 <script setup>
-    import {ref} from 'vue'
+    import {ref, onBeforeMount} from 'vue'
     import exportExcel from 'your folder/export_excel.vue'
 
     const json_data = ref([]);
-    json_data.value = `your data`;
+    
+    onBeforeMount(() => {
+        json_data.value = `your data`;
+    })
 </script>
 
 <template>
