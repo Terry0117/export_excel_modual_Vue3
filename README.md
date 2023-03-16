@@ -36,6 +36,6 @@ data = [
 </script>
 
 <template>
-    <exportExcel :data="json_data" />
+    <exportExcel :data="json_data" :file_name="your file name" />
 </template>
 ```
