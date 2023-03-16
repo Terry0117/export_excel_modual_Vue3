@@ -20,9 +20,10 @@
             ]
     `
 
-    const PropDatas = defineProps(['data']);
+    const PropDatas = defineProps(['data','file_name']);
     const data = ref([]);
     const columns = ref([]);
+    const file_name = PropDatas.file_name + '.xlsx';
     watchEffect(() => {
         data.value = [];
         columns.value = [];
@@ -56,7 +57,7 @@
         const blobData = new Blob([content], {
             type: "application/vnd.ms-excel;charset=utf-8;"
         });
-        link.download = 'output.xlsx';
+        link.download = file_name;
         link.href = URL.createObjectURL(blobData);
         link.click();
         });
